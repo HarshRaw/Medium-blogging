@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+
+        
+      <script>
+        function insert_like() {
+          $.ajax({
+             type: 'post',
+             url: 'store.php',
+             data: {
+               post_like: "like"
+             },
+
+             success: function(response) {
+               $('#totalvotes').slideDown()
+               $('#totalvotes').html(response);
+             }
+           });
+          }
+
+
+           function insert_dislike() {
+             $.ajax({
+             type: 'post',
+             url: 'store.php',
+             data: {
+             post_dislike: "dislike"
+             },
+             success: function(response) {
+             $('#totalvotes').slideDown()
+             $('#totalvotes').html(response);
+             }
+             });
+      }
+
+
+        </script>
+    <title>Blogging</title>
+  </head>
+
+<body style="background-color: rgb(197, 194, 194); margin: 0px 4.13vw 0px 4.13vw;padding-top: 5px; " >
+  <header class="nav">
+    <div class="nav-box" >
+      <span class=""><a href="index.html">Home</a></span>&nbsp&nbsp
+      <span class=""><a href="#">Nation</a></span>&nbsp&nbsp
+      <span class=""><a href="#">Sports</a></span>&nbsp&nbsp
+      <span class=""><a href="#">Politics</a></span>&nbsp&nbsp
+      <span class=""><a href="#">Entertainment</a></span>&nbsp&nbsp
+      <span class=""><a href="#">Search</a></span>&nbsp&nbsp
+      <span class=""><a href="#">Contact Us</a></span>
+    </div>
+  </header>
+  <hr>
+    <div style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;color: rgb(58, 56, 56); margin-right: 5.5vw; margin-left: 5.5vw; cursor:pointer;">
+
+            <img style="float: right;position:relative;top: 5vh;cursor: pointer; width:40vw;" src="images/waffle_patio.png" alt="">
+        <br><br><br><br><br><br><p><strong><EM>MEMBER FEATURE STORY</EM></strong></p><br>
+
+                <p>No, That’s Not How You Say It</p>
+                <p>A short personal history of my favorite fast food
+                </p>
+                <div style="display:inline">
+                    <input style="  border:1px solid grey;  width: 2.9vw; height: 2.9vw; padding: 4px; border-radius: 100%;  background-color: white; cursor: pointer;" type="image" src="images/like.png" onclick="insert_like();" id="like_button" name="" value="">
+                    <input style="  border:1px solid grey;  width: 2.9vw; height: 2.9vw; padding: 4px; border-radius: 100%;  background-color: white; cursor: pointer;"  type="image" src="images/dislike.png" onclick="insert_dislike();" id="dislike_button" name="" value="">
+                    <div id="totalvotes"></div>
+                </div>
+
+                <br>
+
+                <br>
+
+       <p><span style="font-weight: bolder !important; font-size:2rem; cursor: pointer;">I</span>ndians talk funny. We don’t think we do, but we do. We’re usually too busy talking at or over or directly through each other to notice. Every so often, though, we stop long enough to listen to one another and then laugh and point.</p>
+            <p name="f84e" id="f84e" >The middle-aged Persian woman I hired to teach me how to drive made fun of me when I mispronounced Cahuenga Boulevard. I had just moved to Mumbai a few months prior from Yamunotri, where I considered myself a native despite the disagreements of many native Mumbaikars. Frank Lloyd Wright once said, “tip the world over on its side and everything loose will land in Mumbai.” So I floated across the country&#8202;—&#8202;as millions before me had&#8202;—&#8202;to seek my fortune.</p>
+            <p name="fb82" id="fb82" >Her teaching method was an unorthodox form of politically incorrect mockery. When I tapped the brakes too hard, she’d tell me not to drive like a “Chinaman” and then pantomimed her head flinging back and forth, as if she were bowing. She casually informed me that Mumbaikars were notoriously terrible at changing lanes. Don’t get her started on Indians. Seriously, don’t. She was, to be charitable, racially insensitive.</p>
+            <p name="5ccb" id="5ccb" >I was a stranger in her city but my advanced age and inexperience amused her. How could a grown man not know how to drive a car? It was, however, my accent that intrigued her the most. I spoke with the faintest southern drawl but I also had northeastern motormouth tendencies. She was always drawing conclusions as to my ethnicity.</p>
+            <p name="8e24" id="8e24" >During one lesson she said, “You people are good drivers.”</p>
+            <p name="92bc" id="92bc" >You people?</p>
+            <p name="00c4" id="00c4" >“<em >Mumbaikars</em>.”</p>
+            <p name="1452" id="1452" >Because of her I passed my driver’s test, got my first license to operate a motor vehicle, and then proceeded to not drive for years. Everything I needed was in walking distance: my job and places to eat.</p>
+            <p name="6e4a" id="6e4a" >Here’s the truth about food in India: it’s pretty good. There’s amazing pho and pupusas and bulgogi. During my three year internment in the city of Mumbai, I was able to find satisfactory replacements for my beloved street foods. I found some decent pizza. I even found bagels that… sufficed. But I could never find the one dish that reminded me of my adopted home for the previous 16 years. A gyro platter.</p>
+            <p name="41bd" id="41bd" >I couldn’t even find a suitable Mumbai-style Greek diner, the kind of greasy spoon with a massive menu where you can order a meal of waffles, meatloaf, and lasagna if you want.</p>
+            <p name="0cf4" id="0cf4" >But it’s not as if Mumbai has no roast meat sandwiches. My racist&#8202;—&#8202;but friendly&#8202;—&#8202;driving instructor had once pointed out an Armenian restaurant that she recommended. This place served up delicious chicken shawarma sandwiches and a garlic sauce I could eat with my fingers.</p>
+            <p name="59f5" id="59f5" >Eventually, I would drift back to Mumbai. The first thing I would order upon my return? A gyro, a word that rhymes with “pie-whoa.”</p>
+    </div>
+    <hr>
+    <footer class="footer">
+      <div>
+          <br>
+            <a style="padding:0px 1vw;" href="aboutus.html">About us</a><a style="padding:0px 1vw;">Privacy policy</a><a style="padding:0px 1vw;">Newsletter</a><a style="padding:0px 1vw;">Sitemap</a>
+            <h5 class="white-text"><b>FOLLOW US ON</b></h5>
+            <a class="fa fa-facebook" id="fa" href="https://www.facebook.com/suvenconsultants/"></a>
+            <a class="fa fa-twitter" id="fa"></a>
+            <a class="fa fa-google" id="fa" href="https://www.google.co.in/search?nfpr=1&q=suven+consultants&spell=1&sa=X&ved=0ahUKEwidoubh1dXdAhWFNY8KHfrxBZoQBQgpKAA&biw=1366&bih=657#lrd=0x3be7c8afbfffffff:0xcf0cd79d3c52220a,1,,,"></a>
+            <a class="fa fa-rss" id="fa"></a>
+            <a class="fa fa-youtube" id="fa" href="https://www.youtube.com/user/rockyjagtiani"></a>
+          </div>
+          <h5>Copyright © 2019 <a>&nbspSuven Consultants and technology pvt ltd</a>&nbsp&nbsp&nbspAll rights reserved
+          </h5><br>
+    </footer>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+
+
+</body>
+</html>

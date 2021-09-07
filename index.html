@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+                 <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+          
+ 
+         
+
+
+    <title>Blogging</title>
+    <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+    url = window.location.href;
+    firebase.auth().onAuthStateChanged(function (user) {
+        login_button = document.getElementById("get-started");
+       
+        if (user) {
+
+            login_button.innerHTML = "Logout";
+            login_button.setAttribute('onclick','logout()');
+
+                global_email = user.em
+                global_name = user.displayName;
+        } else {
+            
+            login_button.innerHTML = "Get started";
+            login_button.setAttribute('onclick','divert()');    
+        }
+    });
+});
+ $(document).ready(function(){
+  
+  $.ajax({
+    type: 'post',
+    url: 'store.php',
+    data: {
+      view: "pageViews" 
+    },
+
+    success: function(response) {
+      $('#count').html(response);
+    }
+  });
+  
+  $.ajax({
+    type: 'post',
+    url: 'store.php',
+    data: {
+      view1: "pageViews1" 
+    },
+
+    success: function(response) {
+      $('#user').html(response);
+    }
+  });
+});
+function logout() {
+   firebase.auth().signOut()
+    
+   .then(function() {
+      alert('Signout Successful');
+      console.log('Signout Succesfull');
+      window.reload();
+   }, function(error) {
+      console.log('Signout Failed')  
+   });
+}
+    </script>
+  </head>
+
+  <body style="background-color: rgb(163, 163, 163); margin: 0px 4.13vw 0px 4.13vw;padding-top: 5px;">
+  
+                </div>
+
+    <div style="padding-top:4.5vh;">
+      <div style="display:flex; float:right; flex-wrap:wrap;">
+        <button class="btn" id="get-started" onclick="divert()">Get started</button>
+        <form  action="">
+      <input class="search" type="text"  placeholder="        Google Search" name="search"><button style="border-radius:0px 5px 5px 0px;" class="search" type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      </div>
+      <div style=" font-family: -apple-system, BlinkMacSystemFont,'Helvetica Neue', sans-serif;  font-size:4.3em; font-weight:bold;">Blogging</div>
+
+
+        
+    <header class ="count">
+      <div class="inner1">Total Views : 
+        <span id="count"></span> 
+      </div>
+         
+
+      <div class="inner2">Total Users :
+        <span id="user"></span>
+      </div>
+    </header>
+
+
+    <section class="nav">
+      <div class="nav-box">
+      <a  href="#">Home</a>&nbsp&nbsp
+      <a  href="#">Nation</a>&nbsp&nbsp
+      <a  href="#">Sports</a>&nbsp&nbsp
+      <a  href="#">Politics</a>&nbsp&nbsp
+      <a  href="#">Entertainment</a>&nbsp&nbsp
+      <a  href="#">Search</a>&nbsp&nbsp
+      <a  href="#">Contact Us</a>
+      </div>
+    </section>
+    <hr>
+
+
+
+    <table class="table">
+      <tr>
+        <td id="tab">
+                                <img src="images/twitter_blog_image.png" alt="" style="width:27.5vw; height:20.5vh"></img>
+                                <p><h2>Should Twitter Get Rid of Follower Counts?</h2>
+                                        <h3>The possibility feels closer than ever</h3>
+                                        Cool Neha in All Things Creative<br>
+                                        <h4>Jan 9  ·  5 min read</h4></p>
+
+        </td>
+        <td >
+
+                                <span><img src="images/human_face.png" alt="" style="float: left;border: 1px solid black;margin: 22px 10px 10px 0px;" width="100" height="100"></img>
+                                   <h3>Html, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on WWW pages.</h3>
+
+                                </span><br>
+
+
+          <span ><p ></p><img src="images/road_truck.png" alt="" style="float: left;border: 1px solid black;margin: 0px 10px 10px 0px;" width="100" height="100"></img>
+                                <h3>CSS describes how HTML elements are to be displayed on screen, paper, or in other media & control the layout of multiple web pages.</h3>
+                                </span><br>
+
+
+          <span ><p ></p><img src="images/nfl.png" alt="" style="float: left;border: 1px solid black;margin: 0px 10px 10px 0px;" width="100" height="100"></img>
+                                <h3>Teach yourself the foundations of designing using these links made for learning.--freecodecamp & theodinproject</h3>
+                                </span>
+
+        </td>
+        <td id="tab">
+                                <span class="newpage" onclick="article()"><img src="images/waffle_patio.png" alt=" " style="width:27.5vw; height:26.5vh">
+                                    <p><h2>No, That’s Not How You Say It</h2>
+                                        <h3>A short personal history of my favorite fast food<br>(<a style="color: initial; font-style: italic; font-size: 1rem; cursor: pointer;" href="read_more.html">Read more... </a>)</h3>
+                                        VIP Singh <br>
+                                        <h4>Jan 29 · 8 min read</h4></p>
+                                </span>
+
+                </td>
+            </tr>
+        </table><hr>
+
+
+        <div >
+                <img style="padding-left:0.7vw; width:89.5vw;"src="images/welcome_image.png "  alt=" "></img>
+
+        </div><hr>
+
+
+
+        <table class="table">
+                <tr>
+                    <td >
+                                    <img src="images/programming_image.png" alt=" " style="width:27.5vw; height:26.5vh" ></img>
+                                    <p><h2>A few good reasons why you should learn to code</h2>
+                                            <h3>You might be wondering if learning to code is something you should...</h3>
+                                            Rocky Jagtiani <br>
+                                            <h4>Jan 9  ·  5 min read</h4>
+
+                                        </p>
+                    </td>
+                    <td>
+                                    <span><img src="images/investing.png" alt=" " style="float: left;border: 1px solid black;margin: 22px 10px 10px 0px; " width="100 " height="100 "></img>
+                                       <h3>Only buy something that you’d be perfectly happy to hold if the market shut down for 10 years.</h3>
+
+                                    </span><br>
+
+
+                                    <span><p></p><img src="images/summer.png" alt=" " style="float: left;border: 1px solid black;margin: 0px 10px 10px 0px; " width="100" height="100"></img>
+                                    <h3>When I figured out how to work my grill, it was quite a moment. I discovered that summer is a completely different experience when you know how to grill.</h3>
+                                    </span><br>
+
+
+                                    <span><p></p><img src="images/yellow_design.png" alt=" " style="float: left;border: 1px solid black;margin: 0px 10px 10px 0px; " width="100 " height="100 "></img>
+                                    <h3> Chains of habit are too light to be felt until they are too heavy to be broken.</h3>
+                                    </span>
+
+                    </td>
+                    <td style="align-self: center;">
+          <span><img src="images/beach.png" alt="Beaches" style="width:27.5vw; height:26.5vh; "></img>
+                                        <p><h2>Deep space radio waves baffle astronomers; aliens not ruled out</h2>
+                                            <h3> Every time we see something we’ve never seen before that is an opportu..</h3>
+                                            Enzyme Snehar<br>
+                                            <h4>Jan 29 · 8 min read</h4></p>
+                                    </span>
+
+        </td>
+      </tr>
+    </table>
+    <hr>
+
+
+
+
+    <footer class="footer">
+      <div>
+          <br>
+            <a style="padding:0px 1vw;" href="aboutus.html">About us</a><a style="padding:0px 1vw;">Privacy policy</a><a style="padding:0px 1vw;">Newsletter</a><a style="padding:0px 1vw;">Sitemap</a>
+            <h5 class="white-text"><b>FOLLOW US ON</b></h5>
+            <a class="fa fa-facebook" id="fa" href="https://www.facebook.com/suvenconsultants/"></a>
+            <a class="fa fa-twitter" id="fa"></a>
+            <a class="fa fa-google" id="fa" href="https://www.google.co.in/search?nfpr=1&q=suven+consultants&spell=1&sa=X&ved=0ahUKEwidoubh1dXdAhWFNY8KHfrxBZoQBQgpKAA&biw=1366&bih=657#lrd=0x3be7c8afbfffffff:0xcf0cd79d3c52220a,1,,,"></a>
+            <a class="fa fa-rss" id="fa"></a>
+            <a class="fa fa-youtube" id="fa" href="https://www.youtube.com/user/rockyjagtiani"></a>
+          </div>
+          <h5>Copyright © 2019 <a>&nbspSuven Consultants and technology pvt ltd</a>&nbsp&nbsp&nbspAll rights reserved
+          </h5><br>
+    </footer>
+    <script>
+            function divert() {
+              window.location.href = "login.html"
+            }
+            function article(){
+              window.location.href = "more.html"
+            }
+          </script>
+    <script src="js/script.js"></script>
+  </body>
+
+</html>

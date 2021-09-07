@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <script src="https://kit.fontawesome.com/f0b4d212f8.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+          
+ 
+        
+        <link rel="stylesheet" href="css/style.css">
+
+      <title>Blogging</title>
+    </head>
+
+  <body style="background-color:rgb(195, 195, 195)">
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="index.html" style="all: unset;color:grey;cursor: pointer; font-size:1.08rem"><strong>Home</strong></a>
+    <h1 style="text-align: center;">Join Blogging</h1>
+    <h3 style="text-align: center;">Create an account to personalize your <br> homepage, follow your favorite authors and <br>publications, applaud stories you love, and<br> more.</h3>
+     <button class="loginBtn loginBtn--facebook " onclick = "facebookSignin()"><i class="fab fa-facebook-square" style="margin-right: 5px;"></i>Sign up with Facebook</button><br>
+<button class="loginBtn loginBtn--google" onclick = "googleSignin(); users();"><img style="width:20px;margin-right: 5px; height:20px;  float:left" src="images/google.png">Sign up with Google</button><br>
+<br><br>
+
+    <h5 style="display: table;margin: 0 auto;">
+      <h3 style="display: table;margin: 0 auto;">Already have an account?</h3><br>
+      <button class="loginBtn loginBtn--facebook " onclick = "facebookSignin()"><i class="fab fa-facebook-square" style="margin-right: 5px;"></i>Sign in</button><br>
+<button class="loginBtn loginBtn--google" onclick = "googleSignin(); users();"><img style="width:15px;margin-right: 5px; height:15px; float:left" src="images/google_icon.png">Sign in</button>
+
+     <br><br>
+    <h3 style="text-align: center;">To make Blogging work, we log user data and share it with <br> service providers. Click “Sign up” above to accept Blogging’s <br> Terms of Service & Privacy Policy.</h3>
+<script src="js/script.js"></script>
+</body>
+
+
+</html>
